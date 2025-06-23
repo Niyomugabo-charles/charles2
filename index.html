@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CHARLES COMPANY</title>
+ 
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="script.js" defer></script>
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.nav-search input {
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+.nav-search i {
+  color: #555;
+  margin-left: 5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  background: url(images/Product1\ \(43\).jpeg) no-repeat center center/cover;
+  color: white;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 0.5 = 50% fade */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* to appear above the dark overlay */
+}
+
+
+
+.hero-content h1 {
+  font-size: 48px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-content button {
+  padding: 10px 25px;
+  background: gold;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Categories */
+.categories {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.category-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.category {
+  background: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.category:hover {
+  background: gold;
+}
+
+/* Products */
+.products {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 220px;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Subscribe */
+.subscribe {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.subscribe input {
+  padding: 10px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.subscribe button {
+  padding: 10px 20px;
+  background: teal;
+  color: white;
+  border: none;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: white;
+  padding: 30px 20px;
+}
+
+.footer-cols {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-cols div {
+  margin-bottom: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+.nav-logo img{
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+</style>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-logo" style="font-size: 10px;font-family: 'Courier New', Courier, monospace;">
+        <img src="images/Product1 (1).png" alt="">    </div>
+    <div class="nav-search">
+      <input type="text" placeholder="Search for products...">
+      <i class='bx bx-search'></i>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><i class='bx bx-user'></i> <a href="LOGIN FORM.HTML">Login</a></li>
+        <li><i class='bx bx-cart'></i> <a href="#">Cart <span id="cart-count">0</span> (<span id="cart-total">0</span> FRW)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Shop the Best Products at CHARLES COMPANY</h1>
+      <p>Affordable, Quality & Fast Delivery</p>
+      <button>Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <h2>Categories</h2>
+    <div class="category-boxes">
+      <div class="category"><i class='bx bx-mobile'></i> Electronics</div>
+      <div class="category"><i class='bx bx-t-shirt'></i> Fashion</div>
+      <div class="category"><i class='bx bx-basket'></i> Groceries</div>
+      <div class="category"><i class='bx bx-home'></i> Home & Living</div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <img src="C:\Users\HP\Downloads\137ae319-1ded-4c51-b960-90e5a3e4185f.jpeg"alt="Product">
+        <h3>Smartphone</h3>
+        <p>150,000 FRW</p>
+        <button onclick="addToCart(150000)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/Product1 (20).jpeg">
+        <h3>Running Shoes</h3>
+        <p>45,000 FRW</p>
+        <button onclick="addToCart(45000)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/Product1 (43).jpeg"  alt="Product">
+        <h3>Laptop</h3>
+        <p>400,000 FRW</p>
+        <button onclick="addToCart(400000)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="subscribe">
+    <h2>Subscribe to Get Offers</h2>
+    <input type="email" placeholder="Enter your email" />
+    <button>Subscribe</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-cols">
+      <div>
+        <h4>Contact</h4>
+        <p>📞 0791829065</p>
+        <p>✉️ info@Charles company.com</p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p><i class='bx bxl-instagram'></i> Instagram</p>
+        <p><i class='bx bxl-facebook'></i> Facebook</p>
+        <p><i class='bx bxl-whatsapp'></i> WhatsApp</p>
+        <p><i class='bx bxl-twitter'></i> X (Twitter)</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="products.html" style="text-decoration: none; color: #fff;"><p>Products</p></a>
+        <p>Terms & Conditions</p>
+        <a href="my1.html"  style="text-decoration: none; color: #fff;"><p>Help Center</p></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Charles company Marketplace. All rights reserved.</p>
+    </div>
+  </footer>
+<script>
+    let cartCount = 0;
+let cartTotal = 0;
+
+function addToCart(price) {
+  cartCount++;
+  cartTotal += price;
+  document.getElementById('cart-count').textContent = cartCount;
+  document.getElementById('cart-total').textContent = cartTotal;
+}
+
+</script>
+</body>
+</html>
